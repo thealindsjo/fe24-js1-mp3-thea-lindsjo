@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trivia Quiz</title>
+  <link rel="stylesheet" href="./css/styles.css">
+  <script src="./js/script.js" defer></script>
+</head>
+<body>
+  <div id="app">
+    <div id="setup">
+      <h1>Trivia Quiz</h1>
+      <form id="quiz-setup-form">
+        <div>
+            <label for="num-questions">Number of questions:</label>
+            <input type="number" id="num-questions" min="1" max="20" value="5" required>
+        </div>
+        
+        <div>
+            <label for="category">Category:</label>
+            <select id="category">
+              <!-- Kategorier hämtas från APIet och läggs till här -->
+            </select>
+        </div>
+        
+        <div>
+          <label for="difficulty">Difficulty:</label>
+          <select id="difficulty">
+            <option value="easy">Easy</option>
+            <option value="medium">Medium</option>
+            <option value="hard">Hard</option>
+          </select>
+        </div>
+
+        <button type="submit">Start Quiz</button>
+      </form>
+    </div>
+
+    <div id="quiz" class="hidden">
+      <h2 id="question-text"></h2>
+      <div id="answers"></div>
+      <button id="next-button" class="hidden">Next</button>
+    </div>
+
+    <div id="result" class="hidden">
+      <h2 id="result-text"></h2>
+      <button id="restart-button">Restart</button>
+    </div>
+  </div>
+</body>
+</html>
